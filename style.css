@@ -24,7 +24,7 @@ body {
  }
 }
 
-@media only screen and (max-width: 465px) {
+@media only screen and (max-width: 550px) {
  .kitten {content: url("images/kitten-small.png");}
  .kittyloaf {content: url("images/kittyloaf.gif");}
  body {

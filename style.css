@@ -1,0 +1,86 @@
+body {
+	width: 100%;
+	height: 100%;
+	display: block;
+	margin: 0;
+}
+
+.half_page {
+	height: 50%;
+	width: 100%;
+}
+
+/* sources image in a way that can be changed by breakpoints*/
+.kitten {content: url("images/kitten-large.png");}
+
+.kittyloaf {}
+
+/* initially setting both color classes to transparent, so they can be changed with breakpoints */
+.color1 {color: transparent;}
+
+.color2 {color: transparent;}
+
+/* changes image to medium kitten, top div is set to kittyloaf image */
+@media only screen and (max-width: 900px) {
+ .kittyloaf {content: url("images/kitten-medium.png");}
+ .kitten {content: url("images/kittyloaf.gif");}
+ body {
+	 background: yellow;
+ }
+}
+
+/* small kitten in bottom div, kittyloaf image disappears */
+@media only screen and (max-width: 670px) {
+ .kittyloaf {content: url("images/kitten-small.png");}
+ .kitten {content: url("");}
+ body {
+	 background: yellow;
+ }
+}
+
+/* small kitten in top div, background changes to blue */
+@media only screen and (max-width: 465px) {
+ 	.kitten {content: url("images/kitten-small.png");}
+	.kittyloaf {content: url("");}
+ 	body {
+	 background-color: blue;
+ 	}
+}
+
+/* both top & bottom divs are set to contain kittyloaf image */
+@media only screen and (max-width: 420px) {
+ 	.kitten {content: url("images/kittyloaf.gif");}
+	.kittyloaf {content: url("images/kittyloaf.gif");}
+}
+
+/* top div is set to pink */
+@media only screen and (max-width: 360px) {
+ 	.kitten {content: url("images/kittyloaf.gif");}
+	.kittyloaf {content: url("images/kittyloaf.gif");}
+	.color1 {background-color: pink;}
+}
+
+/* bottom div is set to pink, top div is set to blue */
+@media only screen and (max-width: 300px) {
+ 	.kitten {content: url("images/kittyloaf.gif");}
+	.kittyloaf {content: url("images/kittyloaf.gif");}
+	.color2 {background-color: pink;}
+	.color1 {background-color: blue;}
+}
+
+/* top and bottom divs become transparent, background set to pink */
+@media only screen and (max-width: 290px) {
+ 	.kitten {content: url("images/kittyloaf.gif");}
+	.kittyloaf {content: url("images/kittyloaf.gif");}
+	.color1 {background-color: transparent;}
+	.color2 {background-color: transparent;}
+	body {
+	 background-color: pink;
+ 	}
+}
+
+/* constrains image sizes within their parent div */
+.contain-img {
+	max-height: 99%;
+	max-width: 99%;
+}
